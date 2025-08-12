@@ -19,6 +19,12 @@ This project provides a simple web server built with [Hono](https://hono.dev/) a
   </picture>
 </a>
 
+## Run Ollama
+
+```bash
+ollama run gemma3:1b "$(printf 'Analyze this package.json and optimize it:\n\n%s\n' "$(cat package.json)")"
+```
+
 ## API Endpoints
 
 The server exposes the following endpoints:

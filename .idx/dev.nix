@@ -26,8 +26,12 @@
       };
     };
     workspace = {
+      onCreate = {
+        bun-install = "bun i";
+      };
       onStart = {
-        ollamaServe = "nohup ollama serve >~/ollama/.idx/ollama.log 2>&1 &";
+        ollamaServe = "nohup ollama serve > .idx/ollama.log 2>&1 &";
+        pullGemma   = "bash -lc 'sleep 5 && ollama pull gemma3:1b || true'";
       };
     };
   };

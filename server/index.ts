@@ -2,6 +2,8 @@ import { Hono } from 'hono';
 import { stream } from 'hono/streaming';
 import { OllamaClient } from './ollama';
 
+const DEFAULT_MODEL = 'gemma3:1b';
+
 const app = new Hono();
 const ollama = new OllamaClient({ port: 11434 });
 
@@ -16,7 +18,7 @@ app.get('/list', async (c) => {
 });
 
 app.get('/:model?', (c) => {
-  const model = c.req.param('model') || 'gemma3:4b';
+  const model = c.req.param('model') || DEFAULT_MODEL;
   const prompt = c.req.query('prompt') || 'How does Ollama work?';
 
   if (!prompt) {
