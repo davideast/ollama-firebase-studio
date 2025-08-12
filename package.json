@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@types/node": "^24.2.1",
+    "hono": "^4.9.1",
+    "marked": "^16.1.2"
+  }
+}

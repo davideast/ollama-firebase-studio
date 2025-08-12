@@ -1,0 +1,4 @@
+nohup.out
+*.log
+.env
+node_modules
